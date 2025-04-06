@@ -7,9 +7,21 @@
   margin-left: 13rem;
   margin-right: 1rem;
 }
-
-.home-header-buttons a,
-.home-header-buttons button {
+.home-header-buttons button{
+  text-decoration: none;
+  background: linear-gradient(135deg, #e100ff, #b30036);
+  color: white;
+  height: 26px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+.home-header-buttons a
+ {
   text-decoration: none;
   background: linear-gradient(135deg, #e100ff, #b30036);
   color: white;
