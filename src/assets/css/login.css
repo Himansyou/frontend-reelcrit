@@ -103,4 +103,37 @@
     text-decoration: underline;
     color: #ff0099;
   }
-  
+  /* Existing CSS remains as is */
+
+@media (max-width: 480px) {
+  .login form {
+    padding: 1.5rem;
+    gap: 0.8rem;
+  }
+
+  .login h1 {
+    font-size: 1.5rem;
+  }
+
+  .login input,
+  .login button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  .login p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .login {
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .login form {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}

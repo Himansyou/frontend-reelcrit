@@ -1,43 +1,58 @@
 .home-header-buttons {
     display: flex;
-    gap: 10px; 
-    height: 25px;
-    margin-top: 2.5rem;;
-    margin-left: 13rem; 
-    margin-right: 1rem;
-}
-
-.home-header-buttons a {
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+    margin: 2.5rem 1rem 0 1rem;
+    justify-content: center; /* Center on smaller screens */
+  }
+  
+  .home-header-buttons a,
+  .home-header-buttons button {
     text-decoration: none;
     background: linear-gradient(135deg, #e100ff, #b30036);
     color: white;
-    padding: 6px 12px;  
-    border-radius: 6px; 
-    font-weight: 500; 
-    font-size: 14px; 
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.home-header-buttons a:hover {
-    background: #970390; 
-    transform: scale(1.05);  
-}
-
-.home-header-buttons a:active {
-    transform: scale(0.95);  
-}
-
-.home-header-buttons button {
-    text-decoration: none;
-    background: linear-gradient(135deg, #e100ff, #b30036);
-    color: white;
+    padding: 6px 12px;
     border: none;
-    border-radius: 6px;  
+    border-radius: 6px;
     font-weight: 500;
     font-size: 14px;
     transition: background 0.3s ease, transform 0.2s ease;
-    margin-left: 8rem; /* Adjusted margin for better alignment */
-}
+    cursor: pointer;
+  }
   
- 
+  /* Hover/Active States */
+  .home-header-buttons a:hover,
+  .home-header-buttons button:hover {
+    background: #970390;
+    transform: scale(1.05);
+  }
+  
+  .home-header-buttons a:active,
+  .home-header-buttons button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .home-header-buttons {
+      justify-content: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home-header-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .home-header-buttons a,
+    .home-header-buttons button {
+      width: 100%;
+      text-align: center;
+    }
+  }
   
