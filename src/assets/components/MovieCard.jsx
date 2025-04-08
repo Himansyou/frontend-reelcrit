@@ -4,7 +4,7 @@ function MovieCard({ movieProp }) {
 
   
   return (
-    <Link to={`/movie/${movieProp.type}/${movieProp.id}`}>
+    <Link to={`/movie/${movieProp.type}/${movieProp.id}`} className="movie-card-link">
     <div className="movie-card">
       <img src={`https://image.tmdb.org/t/p/w500${movieProp.poster_path}`} alt={movieProp.title} className="movie-image" />
       <div className="movie-info">
