@@ -14,7 +14,13 @@ const Home = () => {
         const loadMovies = async () => {
             try {
                 const data = await PopularMovies();
-                setMovies(data);
+                const withType = data.map(movie => ({
+                    ...movie,
+                    type: movie.title ? "movie" : "tv"
+                  }));
+              
+                  setMovies(withType);
+                
             } catch (error) {
                 console.error("Error loading movies:", error);
             } finally {
@@ -36,7 +42,12 @@ const Home = () => {
         try {
             setLoading(true);
             const data = await SearchMovies(searchTerm);
-            setMovies(data);
+            const withType = data.map(movie => ({
+                ...movie,
+                type: movie.title ? "movie" : "tv"
+              }));
+          
+              setMovies(withType);
         } catch (error) {
             console.error("Search error:", error);
         } finally {
@@ -55,7 +66,9 @@ const Home = () => {
       }, []);
 
     return (
+        
         <div className="home">
+            
             <div className="home-header">
                 <div> 
                     <h1>ReelCrit</h1>
@@ -90,14 +103,17 @@ const Home = () => {
                     </button>
                 </div>
             </div>
+      
 
             {/* Movie Grid */}
             <div className="movie-grid">
                 {loading ? (
                     <p>Loading...</p>
                 ) : (
-                    movies.map((movie) => <MovieCard key={movie.id} movieProp={movie} />)
+                    movies.map((movie) =>{  return <MovieCard key={movie.id} movieProp={movie} />  })
+                    
                 )}
+                
             </div>
         </div>
     );

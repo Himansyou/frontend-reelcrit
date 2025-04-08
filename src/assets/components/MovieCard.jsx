@@ -1,9 +1,10 @@
 import "../css/MovieCard.css"; 
-
+import { Link } from "react-router-dom";
 function MovieCard({ movieProp }) {
 
   
   return (
+    <Link to={`/movie/${movieProp.type}/${movieProp.id}`}>
     <div className="movie-card">
       <img src={`https://image.tmdb.org/t/p/w500${movieProp.poster_path}`} alt={movieProp.title} className="movie-image" />
       <div className="movie-info">
@@ -14,7 +15,9 @@ function MovieCard({ movieProp }) {
         
       </div>
     </div>
+    </Link>
   );
+  
 }
 
 export default MovieCard;
