@@ -70,19 +70,94 @@
     font-size: 15px;
   }
   
-  /* Reviews (Bottom Right) */
-  .reviews-section {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 16px;
-    overflow-y: auto;
-    max-height: 300px;
+  .review-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .submit-review-btn {
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .submit-review-btn:hover {
+    background-color: #45a049;
   }
   
   .review {
-    margin-bottom: 12px;
-    background-color: #f9f9f9;
-    padding: 10px 14px;
-    border-radius: 8px;
+    border-top: 1px solid #ddd;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .media-container {
+      flex-direction: column;
+      padding: 16px;
+      height: auto;
+    }
+  
+    .poster-section {
+      flex: none;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .media-poster {
+      width: 100%;
+      height: auto;
+    }
+  
+    .content-section {
+      width: 100%;
+    }
+  
+    .media-title {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  
+    .media-overview {
+      margin-top: 1.5rem;
+      margin-bottom: 12px;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+  
+    .genre-container {
+      justify-content: center;
+      gap: 8px;
+    }
+  
+    .genre-tag {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  
+    .review-textarea {
+      font-size: 0.95rem;
+    }
+  
+    .submit-review-btn {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+    }
+  
+    .review {
+      font-size: 0.95rem;
+    }
   }
   

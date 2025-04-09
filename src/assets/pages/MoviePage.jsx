@@ -1,19 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchMediaDetails } from "../services/fetchMediaDetails"; 
-import "../css/MoviePage.css"; 
+import { fetchMediaDetails } from "../services/fetchMediaDetails";
+import "../css/MoviePage.css";
+import { getReviews } from "../services/getReviews";
 
 const MoviePage = () => {
-  const { id, type } = useParams(); 
+  const { id, type } = useParams();
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const [newReview, setNewReview] = useState("");
 
   useEffect(() => {
-    
     fetchMediaDetails(type, id).then(setMovie);
-
     
   }, [type, id]);
+
+  useEffect(() => {
+    getReviews(id).then(setReviews); 
+    console.log(reviews.username); 
+  }, [id]);
+
+  const handleReviewSubmit = () => {
+    if (!newReview.trim()) return;
+
+    const dummyUsername = "You"; // Replace with real user info when JWT/auth is implemented
+    const reviewObject = {
+      username: dummyUsername,
+      content: newReview.trim(),
+    };
+
+    setReviews((prevReviews) => [reviewObject, ...prevReviews]);
+    setNewReview("");
+  };
 
   if (!movie) return <p>Loading...</p>;
 
@@ -49,8 +67,18 @@ const MoviePage = () => {
         </div>
 
         <div className="reviews-section">
+          <h2>Write a Review</h2>
+          <textarea
+            value={newReview}
+            onChange={(e) => setNewReview(e.target.value)}
+            placeholder="Share your thoughts about this movie..."
+            rows="4"
+            className="review-textarea"
+          />
+          <button onClick={handleReviewSubmit} className="submit-review-btn">Submit</button>
+
           <h2>User Reviews</h2>
-          {reviews?.length > 0 ? (
+          {reviews.length > 0 ? (
             reviews.map((review, index) => (
               <div key={index} className="review">
                 <p><strong>{review.username}</strong>:</p>
