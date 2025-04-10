@@ -36,15 +36,29 @@ const MoviePage = () => {
   if (!movie) return <p>Loading...</p>;
 
   return (
+    <div className="movie-background-wrapper" style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }}>
+
     <div className="media-container">
       {/* Left - Poster */}
       <div className="poster-section">
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title || movie.name}
-          className="media-poster"
-        />
-      </div>
+  <div
+    className="poster-background"
+    style={{
+      backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
+    }}
+  ></div>
+  <img
+    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+    alt={movie.title || movie.name}
+    className="media-poster"
+  />
+</div>
+
 
       {/* Right - Details and Reviews */}
       <div className="content-section">
@@ -61,8 +75,8 @@ const MoviePage = () => {
           </div>
 
           <div className="media-meta">
-            {movie.release_date && <p><strong>Release:</strong> {movie.release_date}</p>}
-            <p><strong>Rating:</strong> ⭐ {movie.vote_average}</p>
+             <p><strong>Release Date:</strong> {movie.release_date}  {movie.first_air_date}</p>
+            
           </div>
         </div>
 
@@ -88,6 +102,7 @@ const MoviePage = () => {
           ) : (
             <p>No reviews yet.</p>
           )}
+        </div>
         </div>
       </div>
     </div>

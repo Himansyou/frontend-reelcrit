@@ -2,7 +2,7 @@
     display: flex;
     padding: 24px;
     gap: 24px;
-    height:  80vh;
+    
     margin: 0 auto;
     
   }
@@ -36,13 +36,13 @@
   
   .media-title {
     font-size: 2.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 1.2;
   }
   
   .media-overview {
-    margin-top: 3rem;
-    margin-bottom: 16px;
+    margin-top: 1rem;
+    margin-bottom: 10px;
     line-height: 3;
     color: #c9c6c6;
     
@@ -52,6 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 1.5rem;
     margin-bottom: 16px;
   }
   
@@ -66,8 +67,9 @@
   
   /* Meta */
   .media-meta p {
-    margin: 4px 0;
+    margin-top: 2.5rem;
     font-size: 15px;
+    
   }
   
   .review-textarea {
@@ -96,8 +98,9 @@
     background-color: #45a049;
   }
   
+  
   .review {
-    border-top: 1px solid #ddd;
+    
     padding-top: 0.5rem;
     margin-top: 0.5rem;
   }
@@ -127,6 +130,7 @@
     .media-title {
       font-size: 1.8rem;
       text-align: center;
+      margin-top: -1.3rem;
     }
   
     .media-overview {
