@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMediaDetails } from "../services/fetchMediaDetails";
 import "../css/MoviePage.css";
 import { getReviews } from "../services/getReviews";
+import axios from "axios";
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from "react-router-dom";
 
+
+const token = localStorage.getItem('token');
 const MoviePage = () => {
   const { id, type } = useParams();
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState("");
+  const [content, setContent] = useState('');
+  const [userId, setUserId] = useState(null); 
 
   useEffect(() => {
     fetchMediaDetails(type, id).then(setMovie);
@@ -20,17 +27,46 @@ const MoviePage = () => {
     console.log(reviews.username); 
   }, [id]);
 
-  const handleReviewSubmit = () => {
-    if (!newReview.trim()) return;
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        setUserId(decoded.userId); 
+      } catch (e) {
+        console.error("Invalid token", e);
+      }
+    }
+  }, []);
+  
+ const navigate = useNavigate();   
+      
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
 
-    const dummyUsername = "You"; // Replace with real user info when JWT/auth is implemented
-    const reviewObject = {
-      username: dummyUsername,
-      content: newReview.trim(),
-    };
-
-    setReviews((prevReviews) => [reviewObject, ...prevReviews]);
-    setNewReview("");
+    if(!token){
+      alert('Please log in to submit a review.');
+      navigate('/login');
+      return;
+    }
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/Reviews/add`,
+        { content: newReview, movieId: id, userId : userId },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+          withCredentials: true 
+        }
+      );
+      alert('Review submitted!');
+      setNewReview('');
+      getReviews(id).then(setReviews);
+    } catch (error) {
+      console.error('Error submitting review:', error);
+    }
   };
 
   if (!movie) return <p>Loading...</p>;
