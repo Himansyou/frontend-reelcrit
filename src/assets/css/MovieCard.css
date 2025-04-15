@@ -28,20 +28,23 @@ body {
 .movie-card {
   width: 11rem;
   height: 21.15rem;
-  background-color: #1e1e1e; /* Dark background */
-  color: #fff; 
+  background: linear-gradient(145deg, #1e1e1e, #151515); /* Sleek dark gradient */
+  color: #fff;
   border-radius: 1rem;
   overflow: hidden;
   margin: 1.5rem;
-  box-shadow: 0 8px 12px rgba(219, 15, 209, 0.1);
-  transition: transform 0.2s ease-in-out;
-  border: 2px solid #333; /* Dark border */
+  box-shadow: 0 10px 20px rgba(80, 69, 79, 0.15), 0 0 8px rgba(219, 15, 209, 0.05);
+  transition: transform 0.25s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #2c2c2c;
   display: flex;
   flex-direction: column;
+  -webkit-backdrop-filter: blur(4px); /* For Safari support */
+  backdrop-filter: blur(4px);
 }
 
 .movie-card:hover {
   transform: scale(1.08);
+  box-shadow: 0 14px 28px rgba(15, 127, 219, 0.25), 0 0 10px rgba(219, 15, 209, 0.1);
 }
 
 .movie-image {

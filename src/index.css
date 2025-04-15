@@ -46,6 +46,82 @@
 .home-header-buttons button:active {
   transform: scale(0.95);
 }
+/* Fixed full-screen background */
+.homepage-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Each fading background layer */
+.homepage-background .bg-1,
+.homepage-background .bg-2,
+.homepage-background .bg-3,
+.homepage-background .bg-4,
+.homepage-background .bg-5 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: fade 18s infinite;
+}
+
+.homepage-background .bg-1 {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg1.jpg');
+  animation-delay: 0s;
+}
+
+.homepage-background .bg-2 {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg2.jpg');
+  animation-delay: 4s;
+}
+
+.homepage-background .bg-3 {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg3.jpg');
+  animation-delay: 9s;
+}
+.homepage-background .bg-4 {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg4.jpg');
+  animation-delay: 12s;
+}
+.homepage-background .bg-5 {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg5.jpg');
+  animation-delay: 16s;
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Page content should scroll freely */
+.home {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  min-height: 200vh; /* just to force scroll for demo */
+  color: white;
+}
+html, body, #root {
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
 
 /* Medium Screens: Tablet and smaller laptops */
 @media (max-width: 1024px) {

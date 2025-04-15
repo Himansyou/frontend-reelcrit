@@ -69,7 +69,14 @@ const Home = () => {
       }, []);
 
     return (
-        
+            <>
+        <div className="homepage-background">
+      <div className="bg-1"></div>
+      <div className="bg-2"></div>
+      <div className="bg-3"></div>
+        <div className="bg-4"></div>
+        <div className="bg-5"></div>
+      </div> 
         <div className="home">
             
             <div className="home-header">
@@ -119,6 +126,8 @@ const Home = () => {
                 
             </div>
         </div>
+        </>
+      
     );
 };
 
