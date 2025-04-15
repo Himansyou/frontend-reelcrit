@@ -120,7 +120,56 @@ html, body, #root {
   padding: 0;
   overflow-x: hidden;
 }
+@media (max-width: 1024px) {
+  /* On tablets, reduce the card size and space */
+  .movie-card {
+    width: 9rem;
+    height: 18rem;
+  }
+}
 
+@media (max-width: 768px) {
+  /* On small tablets, set grid to 2 columns and adjust card size */
+  .movie-grid {
+    gap: 0.75rem;
+  }
+
+  .movie-card {
+    width: 8rem;
+    height: 16rem;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+
+  .movie-overview {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On mobile, make cards stack in a single column */
+  .movie-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .movie-card {
+    width: 100%;
+    max-width: 14rem; /* Keep the card from stretching too wide */
+    height: auto;
+  }
+
+  .movie-title {
+    font-size: 1.125rem;
+  }
+
+  .movie-overview {
+    font-size: 0.75rem;
+  }
+}
 
 
 /* Medium Screens: Tablet and smaller laptops */
