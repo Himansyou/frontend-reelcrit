@@ -106,20 +106,7 @@
 }
 
 /* Page content should scroll freely */
-.home {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  min-height: 200vh; /* just to force scroll for demo */
-  color: white;
-}
-html, body, #root {
-  height: auto;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
+
 @media (max-width: 1024px) {
   /* On tablets, reduce the card size and space */
   .movie-card {
