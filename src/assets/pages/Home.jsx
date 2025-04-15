@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 import PopularMovies from "../services/PopularMovies"; 
 import SearchMovies from "../services/SearchMovies";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loadMovies = async () => {

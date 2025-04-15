@@ -31,7 +31,7 @@ function Login() {
       console.log('Stored token:', localStorage.getItem('token'));
 
 
-      navigate('/'); // Redirect after successful login
+      navigate('/'); 
     } catch (err) {
       setErrorMsg('Invalid username or password.');
     }
