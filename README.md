@@ -1,12 +1,45 @@
-# React + Vite
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/425369b4-64be-4fe7-bc32-beed2db01d99" alt="Reelcrit Logo" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center"> 🎬 [Reelcrit - Frontend](https://reelcrit.vercel.app/) </h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  A React-based frontend for Reelcrit — a movie review platform that allows users to read and post reviews.<br>
+  Built for seamless interaction with the Spring Boot backend and an intuitive UI/UX.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img alt="React" src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+  <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Features
+
+- 🌐 Seamless connection with the Spring Boot backend API
+- 📝 Submit movie reviews via a user-friendly form
+- 🔐 User authentication via JWT
+- 🧑 Public access to reviews without login
+- 🚀 Responsive design with modern UI
+- 🧑‍🤝‍🧑 User authentication (Login/Signup) for posting reviews
+- 🎨 Built with React and styled with CSS
+
+---
+
+## 📂 Project Structure
+reelcrit-frontend/ ├── src/ │ ├── components/ │ ├── pages/ │ ├── App.js │ ├── index.js │ └── assets/ ├── public/ ├── package.json ├── vite.config.js └── README.md
+
+## 🛠️ Tech Stack
+- **React** – Frontend framework
+- **Vite** – Build tool for fast development
+- **JWT** – Authentication via JSON Web Tokens
+- **Axios** – API calls to interact with backend
+- **React Router** – Handling routing for different pages (Login, Reviews, etc.)
+
+---
+
+
+
