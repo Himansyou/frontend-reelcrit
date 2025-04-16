@@ -46,13 +46,24 @@
 .home-header-buttons button:active {
   transform: scale(0.95);
 }
-/* Fixed full-screen background */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 .homepage-background {
+  min-height: 100vh;
+  height: 100vh;
+
+
+/* Fixed full-screen background */
+
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
