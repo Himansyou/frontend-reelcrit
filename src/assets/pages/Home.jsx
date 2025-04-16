@@ -32,6 +32,35 @@ const Home = () => {
         };
         loadMovies();
     }, []);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+      
+        if (token) {
+          try {
+            const payload = JSON.parse(atob(token.split('.')[1])); // decode payload
+            const isExpired = payload.exp * 1000 < Date.now(); // exp is in seconds, Date.now() in ms
+      
+            if (isExpired) {
+              localStorage.removeItem('token');
+              setIsLoggedIn(false);
+            } else {
+              setIsLoggedIn(true);
+      
+              // auto-logout when it expires
+              const timeout = setTimeout(() => {
+                handleLogout(); 
+              }, payload.exp * 1000 - Date.now());
+      
+              return () => clearTimeout(timeout); // cleanup
+            }
+          } catch (err) {
+            console.error("Invalid token format:", err);
+            localStorage.removeItem('token');
+            setIsLoggedIn(false);
+          }
+        }
+      }, []);
+      
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -63,9 +92,9 @@ const Home = () => {
         }
     };
     useEffect(() => {
-        // Check if token exists in localStorage
+        
         const token = localStorage.getItem('token');
-        setIsLoggedIn(!!token); // sets to true if token exists
+        setIsLoggedIn(!!token); 
       }, []);
 
     return (
