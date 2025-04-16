@@ -41,6 +41,11 @@ function Register() {
   };
 
   return (
+    <>
+      <div className="register-background">
+        
+      </div>
+      
     <div className="register">
       
       <form onSubmit={handleSubmit}>
@@ -68,6 +73,7 @@ function Register() {
         {error && <p style={{ color: "tomato", marginTop: "0.5rem" }}>{error}</p>}
       </form>
     </div>
+    </>
   );
 }
 

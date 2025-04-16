@@ -7,10 +7,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    
     font-family: 'Segoe UI', sans-serif;
     z-index: 1;
   }
+  .register-background {
+    min-height: 100vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/Shadows.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    animation: zoomFade 20s ease-in-out infinite;
+  }
+  
   
   .register form {
     width: 90%;

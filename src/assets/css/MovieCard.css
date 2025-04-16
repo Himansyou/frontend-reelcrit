@@ -1,50 +1,49 @@
 
-.movie-card-link {
-  text-decoration: none; 
-  color: inherit;         
-  display: block;         
-}
-
 
 body {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    color: #fff; /* White text */
+  
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff;
     
  
 }
-
 .movie-grid {
-  display: flex;         /* Enables Flexbox */
-  flex-wrap: wrap;       /* Allows wrapping if space is insufficient */
-  justify-content: center; /* Centers items horizontally */
-  gap: 1rem;          
-  padding: 1rem;       
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1rem;
 }
 
+.movie-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 .movie-card {
   width: 11rem;
   height: 21.15rem;
-  background: linear-gradient(145deg, #1e1e1e, #151515); /* Sleek dark gradient */
-  color: #fff;
   border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(4px);
+
   overflow: hidden;
-  margin: 1.5rem;
-  box-shadow: 0 10px 20px rgba(80, 69, 79, 0.15), 0 0 8px rgba(219, 15, 209, 0.05);
-  transition: transform 0.25s ease-in-out, box-shadow 0.3s ease-in-out;
-  border: 1px solid #2c2c2c;
   display: flex;
   flex-direction: column;
-  -webkit-backdrop-filter: blur(4px); /* For Safari support */
-  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  color: #fff;
+  animation: slideIn 0.6s ease-out;
 }
 
 .movie-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 14px 28px rgba(15, 127, 219, 0.25), 0 0 10px rgba(219, 15, 209, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 14px 28px rgba(234, 0, 255, 0.15), 0 0 10px rgba(234, 0, 255, 0.1);
 }
 
 .movie-image {
@@ -55,13 +54,16 @@ body {
 }
 
 .movie-info {
+  padding: 1rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-grow: 1;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: #252525; /* Slightly lighter dark background */
+  background: transparent;
 }
 
 .movie-title {
+  font-family: 'Segoe UI', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   color: #ffffff;
@@ -71,27 +73,58 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  margin-top: -0.1rem;
+  margin-top: -0.9rem;
   margin-bottom: 0.1rem;
+  text-align: center;
 }
 
 .movie-date {
-  font-size: 0.675rem;
-  color: #bbb; /* Light gray for subtle contrast */
-  margin-top: -0.2rem;
+  font-size: 0.7rem;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.1rem;
 }
 
 .movie-overview {
-  font-size: 0.875rem;
-  color: #aaa; /* Light gray text */
-  margin-top: 0rem;
-  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  color: #ccc;
   text-align: left;
   overflow: hidden;
-  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
+  margin-top: -0.2rem;
 }
 
+/* Reusing Login Form Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* Responsive */
+@media (max-width: 480px) {
+  .movie-card {
+    width: 90%;
+    height: auto;
+  }
 
+  .movie-info {
+    padding: 0.8rem;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+
+  .movie-overview {
+    font-size: 0.8rem;
+  }
+}

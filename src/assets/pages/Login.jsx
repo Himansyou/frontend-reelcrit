@@ -39,6 +39,10 @@ function Login() {
   
 
   return (
+    <>
+    <div className="login-background">
+      
+    </div>
     <div className="login">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
@@ -64,6 +68,7 @@ function Login() {
         <p>new to Reelcrit? <Link to="/register">Sign up</Link></p>
       </form>
     </div>
+    </>
   );
 }
 
