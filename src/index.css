@@ -56,9 +56,6 @@ html, body {
   height: 100vh;
 
 
-/* Fixed full-screen background */
-
-
   position: fixed;
   top: 0;
   left: 0;
@@ -86,27 +83,28 @@ html, body {
 }
 
 .homepage-background .bg-1 {
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg1.gif');
   animation-delay: 0s;
 }
 
 .homepage-background .bg-2 {
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg2.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg2.gif');
   animation-delay: 4s;
 }
 
 .homepage-background .bg-3 {
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg3.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg3.gif');
   animation-delay: 9s;
 }
 .homepage-background .bg-4 {
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg4.jpg');
-  animation-delay: 12s;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg4.gif');
+  animation-delay: 13s;
 }
 .homepage-background .bg-5 {
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('/images/bg5.jpg');
-  animation-delay: 16s;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg5.gif');
+  animation-delay: 17s;
 }
+
 
 @keyframes fade {
   0%   { opacity: 0; }
