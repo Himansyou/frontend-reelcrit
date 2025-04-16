@@ -79,7 +79,8 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: fade 18s infinite;
+  animation: fade 25s infinite;
+  animation-fill-mode: both;
 }
 
 .homepage-background .bg-1 {
@@ -89,29 +90,27 @@ html, body {
 
 .homepage-background .bg-2 {
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg2.gif');
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 
 .homepage-background .bg-3 {
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg3.gif');
-  animation-delay: 9s;
+  animation-delay: 10s  ;
 }
 .homepage-background .bg-4 {
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg4.gif');
-  animation-delay: 13s;
+  animation-delay: 15s;
 }
 .homepage-background .bg-5 {
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('/images/bg5.gif');
-  animation-delay: 17s;
+  animation-delay: 20s;
 }
 
 
 @keyframes fade {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  30%  { opacity: 1; }
-  40%  { opacity: 0; }
-  100% { opacity: 0; }
+  0%, 100%   { opacity: 0; }
+  10%, 30%   { opacity: 1; }
+  40%, 90%   { opacity: 0; }
 }
 
 /* Page content should scroll freely */
@@ -129,7 +128,7 @@ html, body {
   .movie-grid {
     gap: 0.75rem;
   }
-
+  
   .movie-card {
     width: 8rem;
     height: 16rem;
