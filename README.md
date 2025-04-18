@@ -40,6 +40,11 @@ reelcrit-frontend/ ├── src/ │ ├── components/ │ ├── pages/
 - **React Router** – Handling routing for different pages (Login, Reviews, etc.)
 
 ---
+## 📷 Screenshots
+<img src="https://github.com/user-attachments/assets/c7c96cbd-0a45-4f59-ac67-41c0c3f5a064"/>
+<img src="https://github.com/user-attachments/assets/50589193-8b1f-41c7-8d4d-9b1a4a6aa49b"/>
+<img src="https://github.com/user-attachments/assets/2e6774e2-bdd3-450d-ae51-9f487dc48aa5"/>
+
 
 
 
