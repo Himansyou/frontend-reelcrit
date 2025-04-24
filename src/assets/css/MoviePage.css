@@ -15,7 +15,7 @@
   
   .media-poster {
     width: 100%;
-    height: auto;
+    height: 100%;
       max-height: 170vh;
     object-fit: cover;
     border-radius: 12px;
