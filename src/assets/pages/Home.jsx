@@ -100,11 +100,12 @@ const Home = () => {
     return (
             <>
         <div className="homepage-background">
-      <div className="bg-1"></div>
-      <div className="bg-2"></div>
-      <div className="bg-3"></div>
-        <div className="bg-4"></div>
-        <div className="bg-5"></div>
+        <video autoPlay muted loop className="background-video">
+        <source src="/images/bg1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="video-overlay"></div>
+     
       </div> 
         <div className="home">
             
